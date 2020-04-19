@@ -3,7 +3,7 @@
 Educational Project
 
 A task scheduler implemented in C script for the PS (processor system) core 1 in Zynq7000 SoC, using API (Application Programming Interface) and BSP (Board Support Package) generated in Vivado with a basic VHDL HW: PS IP with some basic functionality enabled, a first
-AXI connected GPIO IP with all on board led linked, a second AXI connected GPIO IP with a external Pin linked. 
+AXI connected GPIO IP with all the on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input.
 
 - GPIO: Set one PS pin as output and one as a input;
 
