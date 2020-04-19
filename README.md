@@ -13,4 +13,4 @@ Read external non differential analog input by instanciate IP block XADC in Viva
 Reading are effectuated in polling mode (interrupt or DMA not yet being configured).
   
 - MAIN: when 3.3 V applied on input designed pin, output designed pin go HIGH and the eight onboard led turns on;
-An interrupt on timer, drive a basic FIFO task scheduler: toggle the onboard led is the task 1 operation, read internal core temperature and external analog input in task 2.
+An interrupt on timer, drive a basic FIFO task scheduler: toggle the onboard led is the task 1 operation, read internal core temperature  in task 2, read external analog input in polling, out of task domain and into infinite loop of main function.
