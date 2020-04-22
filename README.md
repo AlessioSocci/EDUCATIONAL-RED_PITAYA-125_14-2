@@ -2,8 +2,8 @@
 
 Educational Project
 
-A task scheduler implemented in C script for the PS (processor system) core 1 in Zynq7000 SoC, using API (Application Programming Interface) and BSP (Board Support Package) generated in Vivado with a basic VHDL HW: PS IP with some basic functionality enabled, a first
-AXI connected GPIO IP with all the on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input.
+A FCFS (first come first served) task scheduler drived by a system timer and interrupt, are implemented in C script for the PS (processor system) core 1 in Zynq7000 SoC, using API (Application Programming Interface) and BSP (Board Support Package) generated in Vivado with a basic VHDL HW: PS IP with some basic functionality enabled, a first
+AXI connected GPIO IP with eight of the ten on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input.
 
 - GPIO: Set one AXI GPIO PL IP pin as output and, in another one AXI GPIO PL IP, one pin as input; GPIO IP are connected via AXI bus to processor.
 
