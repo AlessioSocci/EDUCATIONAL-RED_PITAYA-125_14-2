@@ -7,7 +7,8 @@ AXI connected GPIO IP with all the on board led linked, a second AXI connected G
 
 - GPIO: Set one AXI GPIO PL IP pin as output and another one AXI GPIO PL IP pin as input; GPIO IP are connected via AXI bus to processor.
 
-- PS MIO: Set pin 13 of PS MIO as output. PS MIO are pin directly connected to the processor, bypassing the FPGA logic.  
+- PS MIO: Set pin 0 and 7 of PS MIO as output, it's connected at two on-board led and at the other side are directly connected to the processor, bypassing the FPGA logic.
+Set pin 12 as input, with a pull-down resistor 10 kOhm externally cabled. 
 
 - XADC: Read internal core tmperature, sensor is yet in zynq package and for this purpose, ther is no need to instanciate block XADC IP.
 (XADC is necessary for external voltage conversion);
@@ -15,4 +16,4 @@ Read external non differential analog input by instanciate IP block XADC in Viva
 Reading are effectuated in polling mode (interrupt or DMA not yet being configured).
   
 - MAIN: when 3.3 V applied on input designed pin, output designed pin go HIGH and the eight onboard led turns on;
-An interrupt on timer, drive a basic FIFO task scheduler: toggle the onboard led, connected to AXI GPIO, and PS MIO output pin 13 in task 1, read internal core temperature in task 2, read external AXI GPIO analog input in polling, out of task domain and into infinite loop of main function.
+An interrupt on timer, drive a basic FIFO task scheduler: toggle the eight onboard led, connected to AXI GPIO, and the first led connected directly to processor in task 1, read internal core temperature in task 2, read external AXI GPIO analog input and PS MIO input in polling, out of task domain and into infinite loop of main function. If button of AXI GPIO is pressed, the eight led are on, else blink with tasko; if button are pressed, the two led connected to processor are on, else the second is off and the first blink with task0.  
