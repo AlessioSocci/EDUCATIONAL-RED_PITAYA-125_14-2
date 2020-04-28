@@ -26,7 +26,7 @@ An interrupt on timer, drive a basic FCFS task scheduler: toggle the eight onboa
 
 MICROBLAZE soft-processor :
 
-- MAIN: initialize mail box with his BSP API and send it a 4 Byte message in infinite while loop. 
+- MAIN: initialize mail box with its BSP API and send to it a 4 Byte message in infinite while loop. 
 
 
 
