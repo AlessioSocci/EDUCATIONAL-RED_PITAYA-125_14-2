@@ -3,7 +3,10 @@
 Educational Project
 
 A FCFS (first come first served) task scheduler drived by a system timer and interrupt, are implemented in C script for the PS (processor system) core 1 in Zynq7000 SoC, using API (Application Programming Interface) and BSP (Board Support Package) generated in Vivado with a basic VHDL HW: PS IP with some basic functionality enabled, a first
-AXI connected GPIO IP with eight of the ten on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input.
+AXI connected GPIO IP with eight of the ten on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input. 
+A MicroBlaze soft core processor and a mail-box are created in PL and connected by AXI bus. 
+
+ARM CORTEX A9 Core 1 processor:
 
 - GPIO: Set one AXI GPIO PL IP pin as output and, in another one AXI GPIO PL IP, one pin as input; GPIO IP are connected via AXI bus to processor.
 
@@ -19,4 +22,13 @@ Reading are effectuated in polling mode (interrupt or DMA not yet being configur
 has been commented. ).
 
 - MAIN: when 3.3 V are applied on input designed pin, output designed pin go HIGH and the eight onboard led turns on;
-An interrupt on timer, drive a basic FCFS task scheduler: toggle the eight onboard led, connected to AXI GPIO, and the first led connected directly to processor in task 1, read internal core temperature in task 2, read external AXI GPIO analog input and PS MIO input in polling, out of task domain and into infinite loop of main function. If button of AXI GPIO is pressed, the eight led are on, else blink with tasko; if button are pressed, the two led connected to processor are on, else the second is off and the first blink with task0.  
+An interrupt on timer, drive a basic FCFS task scheduler: toggle the eight onboard led, connected to AXI GPIO, and the first led connected directly to processor in task 0, read internal core temperature in task 1, read external AXI GPIO analog input and PS MIO input in polling, out of task domain and into infinite loop of main function. If button of AXI GPIO is pressed, the eight led are on, else blink with tasko; if button are pressed, the two led connected to processor are on, else the second is off and the first blink with task0. In task2, read the 4 Byte message in mail mbox, it's the message from Microblaze.  
+
+MICROBLAZE soft-processor :
+
+- MAIN: initialize mail box with his BSP API and send it a 4 Byte message in infinite while loop. 
+
+
+
+
+
