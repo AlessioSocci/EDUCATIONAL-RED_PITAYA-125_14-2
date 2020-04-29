@@ -4,7 +4,7 @@ Educational Project
 
 A FCFS (first come first served) task scheduler drived by a system timer and interrupt, are implemented in C script for the PS (processor system) core 1 in Zynq7000 SoC, using API (Application Programming Interface) and BSP (Board Support Package) generated in Vivado with a basic VHDL HW: PS IP with some basic functionality enabled, a first
 AXI connected GPIO IP with eight of the ten on board led linked, a second AXI connected GPIO IP with external Pin linked and an XADC IP block with external pin connected to AUX 0 input. 
-A MicroBlaze soft core processor and a mail-box are created in PL and connected by AXI bus. 
+A MicroBlaze soft core processor, a mail-box IP, and a mutex IP are created in PL and connected by AXI bus. 
 
 ARM CORTEX A9 Core 1 processor:
 
