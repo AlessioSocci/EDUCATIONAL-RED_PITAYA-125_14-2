@@ -22,7 +22,7 @@ Reading are effectuated in polling mode (interrupt or DMA not yet being configur
 has been commented. ).
 
 - MAIN: when 3.3 V are applied on input designed pin, output designed pin go HIGH and the eight onboard led turns on;
-An interrupt on timer, drive a basic FCFS task scheduler: toggle the eight onboard led, connected to AXI GPIO, and the first led connected directly to processor in task 0, read internal core temperature in task 1, read external AXI GPIO analog input and PS MIO input in polling, out of task domain and into infinite loop of main function. If button of AXI GPIO is pressed, the eight led are on, else blink with task0; if button are pressed, the yellow led connected to processor is on, else blink with task0. In task2 check if mutex is locked by Microblaze or not, if it's lock, turn on the red led directly connected to processor. Out of task and before the infinite while loop, read the 4 Byte message in mail mbox, it's the message from Microblaze.  
+An interrupt on timer, drive a basic FCFS task scheduler: toggle the eight onboard led, connected to AXI GPIO, and the first led connected directly to processor in task 0, read internal core temperature in task 1, read external AXI GPIO analog input and PS MIO input in polling, out of task domain and into infinite loop of main function. If button of AXI GPIO is pressed, the eight led are on, else blink with task0; if button are pressed, the yellow led connected to processor is on, else blink with task0. In task2 check if mutex is locked by Microblaze or not, if it's lock, turn on the red led directly connected to processor. Out of task and before the infinite while loop, read the 4 Byte message in mail box, it's the message from Microblaze.  
 
 MICROBLAZE soft-processor :
 
